@@ -1,0 +1,14 @@
+---
+:Купити продукти:
+  :categories:
+  - Покупки
+  :priority: Високий
+  :due_date: '2024-02-28'
+  :completed: true
+:Прочитати книгу:
+  :categories:
+  - Особисті
+  - Саморозвиток
+  :priority: Низький
+  :due_date: '2024-04-15'
+  :completed: false
