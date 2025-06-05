@@ -1,0 +1,20 @@
+<%= form_with(model: comment, local: true) do |form| %>
+  <% if comment.errors.any? %>
+    <div class="alert alert-danger">
+      <ul><% comment.errors.full_messages.each do |msg| %><li><%= msg %></li><% end %></ul>
+    </div>
+  <% end %>
+  <div class="mb-3">
+    <%= form.label :body, class: 'form-label' %>
+    <%= form.text_area :body, class: 'form-control', rows: 3 %>
+  </div>
+  <div class="mb-3">
+    <%= form.label :user_id, "Автор", class: 'form-label' %>
+    <%= form.collection_select :user_id, User.all, :id, :name, class: 'form-select' %>
+  </div>
+  <div class="mb-3">
+    <%= form.label :post_id, "До поста", class: 'form-label' %>
+    <%= form.collection_select :post_id, Post.all, :id, :title, class: 'form-select' %>
+  </div>
+  <%= form.submit class: 'btn btn-primary' %>
+<% end %>
